@@ -1,0 +1,8 @@
+flask
+pandas
+mysql-connector-python
+pdfplumber
+openpyxl
+scikit-learn
+reportlab
+joblib

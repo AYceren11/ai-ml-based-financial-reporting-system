@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uçak Yazılım - Finansal Rapor</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Logo ortada -->
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Uçak Yazılım Logo">
+            <h3>Staj Projesi:</h3>
+            <p>Finansal ve Ürün Bazlı Performans Raporu</p>
+        </div>
+
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/upload-excel">
+            <!-- Hidden file input -->
+            <input type="file" id="excel_file" name="excel_file" accept=".xlsx,.xls" required hidden>
+            
+            <!-- Custom button styled like PDF button -->
+            <label for="excel_file" class="button">Excel Yükle</label>
+
+            <!-- Dosya adı buraya gelecek -->
+            <div id="fileName" class="file-name">Henüz dosya seçilmedi</div>
+            
+            <button type="submit" class="button">PDF Raporu Oluştur</button>
+        </form>
+
+<div id="message"></div>
+
+        <div id="message"></div>
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
