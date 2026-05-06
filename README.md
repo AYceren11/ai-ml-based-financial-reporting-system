@@ -1,168 +1,138 @@
-# ai-ml-based-financial-reporting-system
-A Flask-based financial analysis application that dynamically processes uploaded datasets, applies regression or classification models, and generates structured PDF reports supported by rule-based and AI-generated insights.
-📊 Financial ML Decision Support System (Version 1)
-📌 Overview
+# AI & ML Based Financial Reporting & Decision Support System
 
-This project is the first version of a machine learning–based financial decision support system developed during my software engineering internship at **UCAK YAZILIM**.
-
-## 🖼️ Arayüz Ekran Görüntüleri (Interface Screenshots)
+A professional Flask-based financial analysis application that dynamically processes uploaded datasets, applies machine learning models for performance prediction, and generates comprehensive PDF reports enhanced by AI-generated insights.
 
 <p align="center">
-  <img src="assets/interface_initial.png" width="32%" alt="Başlangıç Ekranı">
-  <img src="assets/interface_ready.png" width="32%" alt="Dosya Seçildi">
-  <img src="assets/interface_processing.png" width="32%" alt="Rapor Hazırlanıyor">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+  <img src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+  <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn">
+  <img src="https://img.shields.io/badge/Ollama-black?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama">
 </p>
 
-## 📄 Örnek Rapor Çıktısı (Sample Report Output)
+---
 
-Sistem tarafından otomatik olarak oluşturulan örnek PDF raporuna buradan ulaşabilirsiniz:
-👉 **[Finansal_Analiz_Raporu.pdf](assets/Finansal_Analiz_Raporu.pdf)**
+## 📌 Project Overview
+This system was developed as a core component of a software engineering internship at **UCAK YAZILIM**. It serves as a decision support platform that bridge the gap between raw financial data and actionable managerial insights. By combining traditional statistical analysis with modern AI interpretation, it provides a holistic view of branch and product performance.
 
-The system analyzes uploaded financial datasets, performs regression-based profit prediction, calculates deviation metrics, and generates structured PDF reports for managerial decision support.
+## 🖼️ Interface Screenshots
 
-Version 1 focuses specifically on financial performance analysis using a fixed-schema regression approach.
+### 1. Initial State
+The landing page of the application where users can start by uploading their financial Excel datasets.
+<p align="center">
+  <img src="assets/interface_initial.png" width="80%" alt="Initial Screen">
+</p>
 
-🎯 Key Features
+### 2. Dataset Selected
+Once a valid Excel file is selected, the system prepares for processing and model training.
+<p align="center">
+  <img src="assets/interface_ready.png" width="80%" alt="File Selected">
+</p>
 
-📂 Excel file upload support
+### 3. Processing & AI Generation
+The system performs regression analysis and calls the Llama 3 model via Ollama to generate strategic insights.
+<p align="center">
+  <img src="assets/interface_processing.png" width="80%" alt="Generating Report">
+</p>
 
-🧹 Automated data preprocessing (NaN handling, numeric selection)
+## 📄 Sample Report Output
+Explore an example of the automatically generated PDF report:
+👉 **[View Sample Report (PDF)](assets/Finansal_Analiz_Raporu.pdf)**
 
-📈 Linear Regression–based profit prediction
+---
 
-📊 Deviation analysis (Predicted vs Actual comparison)
+## 🎯 Key Features
+- **Smart Data Ingestion:** Direct support for Excel (`.xlsx`) datasets with automated structure validation.
+- **Automated Preprocessing:** Intelligent handling of missing values (NaN), column standardization, and numeric data extraction.
+- **Predictive Analytics:** Uses **Linear Regression** to predict expected profits and identify performance outliers.
+- **Quantile-Based Risk Scoring:** Sophisticated classification of branch performance into *Low*, *Medium*, and *High Risk* categories based on profit deviation.
+- **AI-Powered Narrative:** Integrates **Ollama (Llama 3)** to generate professional financial commentary and strategic recommendations in Turkish.
+- **Professional PDF Generation:** Dynamic report creation using **ReportLab**, featuring structured tables and AI-driven executive summaries.
 
-⚠ Risk classification using quantile-based segmentation
+---
 
-🧠 **AI-Powered Analysis:** Generates Turkish financial commentary using Ollama (Llama 3)
+## 🧠 Technical Implementation
 
-📄 Automated PDF report generation (including AI insights)
+### Machine Learning Engine
+The system utilizes a supervised learning approach to establish a performance baseline:
+- **Model:** Linear Regression (Scikit-learn)
+- **Features:** Revenue, Expense
+- **Target:** Profit
+- **Metrics:** R² score is calculated to ensure model reliability.
+- **Deviation Analysis:** 
+  $$\text{Deviation (\%)} = \frac{\text{Actual Profit} - \text{Predicted Profit}}{\text{Predicted Profit}} \times 100$$
+  This metric allows the system to identify which branches are overperforming or underperforming relative to the statistical trend.
 
-🌐 Web interface built with Flask
+### AI Integration (Ollama)
+The application leverages the **Llama 3** model (via Ollama) to interpret the data summary. It acts as a virtual financial consultant that:
+1. Analyzes branch-specific statistics.
+2. Identifies strong and weak product lines.
+3. Provides 5 key strategic recommendations for management.
 
-🧠 Machine Learning Approach
+---
 
-Version 1 applies:
+## 🛠️ Tech Stack
+- **Backend:** Python / Flask
+- **Data Science:** Pandas, Scikit-learn
+- **AI:** Ollama / Llama 3
+- **Reporting:** ReportLab
+- **Data Source:** OpenPyXL (Excel integration)
+- **Frontend:** HTML5, CSS3 (Modern UI with Glassmorphism effects)
 
-Linear Regression for financial profit prediction
+---
 
-R² score for model performance evaluation
+## 📂 Dataset Requirements
+The system is optimized for a specific financial schema including:
+- `Region`: Branch or region name
+- `Product`: Product category
+- `Revenue`: Total income
+- `Expense`: Total costs
+- `Profit`: Net profit
+- `Units_Sold`: Quantity sold
 
-Quantile-based risk segmentation for performance categorization
+---
 
-Deviation is calculated as:
+## 🚀 Installation & Setup
 
-Deviation (%) = (Actual Profit - Predicted Profit) / Predicted Profit * 100
+### 1. Prerequisites
+- Python 3.8+
+- [Ollama](https://ollama.ai/) installed and running (`llama3` model downloaded)
 
-
-This allows identification of high-risk and underperforming units.
-
-🏗 System Architecture
-
-The system follows this workflow:
-
-File Upload
-
-Data Reading (Pandas)
-
-Data Preprocessing
-
-Model Training (Scikit-learn)
-
-Prediction
-
-Performance Evaluation
-
-PDF Report Generation
-
-The backend is implemented using Flask, and reports are generated using ReportLab.
-
-🛠 Tech Stack
-
-Python
-
-Flask
-
-Pandas
-
-Scikit-learn
-
-ReportLab
-
-OpenPyXL
-
-**Ollama (Llama 3)**
-
-HTML / CSS (Frontend interface)
-
-📂 Example Financial Dataset Structure
-
-The system expects financial datasets including variables such as:
-
-Revenue
-
-Expense
-
-Profit
-
-Units_Sold
-
-Region
-
-Product
-
-Version 1 works with a fixed financial schema.
-
-🚀 How to Run
-1️⃣ Create Virtual Environment
+### 2. Setup Environment
+```bash
+# Create virtual environment
 python -m venv venv
 
-2️⃣ Activate Environment
-
-Windows:
-
+# Activate environment
+# Windows:
 venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+```
 
-3️⃣ Install Requirements
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-
-Or manually:
-
-pip install flask pandas scikit-learn reportlab openpyxl joblib
-
-4️⃣ Run Application
+### 4. Run Application
+```bash
 python app.py
+```
+Visit `http://127.0.0.1:5000` in your browser.
 
+---
 
-Then open:
+## 🔍 Roadmap & Future Versions
+The current version (v1.0) establishes the analytical core. Future updates will include:
+- **Dynamic Feature Selection:** Allow users to map their own columns to ML inputs.
+- **Model Switching:** Choice between Regression (Profit) and Classification (Risk Level).
+- **Multi-Model AI Support:** Integration with GPT-4 or Claude via API.
+- **Enhanced Visualization:** Interactive charts (Plotly/D3.js) within the web interface.
 
-http://127.0.0.1:5000
+---
 
-🔍 Version Notes
+## 📈 About the Project
+This project demonstrates the practical application of AI and Machine Learning in automating professional workflows. It was designed to provide a robust foundation for automated financial reporting systems, emphasizing clean code, modular architecture, and user-centric design.
 
-Version 1:
-
-Uses fixed regression model
-
-Designed specifically for financial analysis
-
-Risk classification based on quantile deviation
-
-No dynamic model selection
-
-Future versions introduce:
-
-Dynamic column detection
-
-Automatic model selection (Regression / Classification)
-
-Advanced AI-assisted report interpretation (Multi-model support)
-
-Improved robustness and scalability
-
-📈 Project Purpose
-
-The goal of this project is to demonstrate how machine learning models can be integrated into financial decision-making processes and automated reporting pipelines.
-
-This version establishes the core analytical engine that later evolved into a more flexible and generalized decision support platform.
+Developed by **AYceren11** during the Software Engineering Internship program.
