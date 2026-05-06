@@ -7,9 +7,11 @@ This project is the first version of a machine learning–based financial decisi
 
 ## 🖼️ Arayüz Ekran Görüntüleri (Interface Screenshots)
 
-| Başlangıç Ekranı | Dosya Seçildi | Rapor Hazırlanıyor |
-| :---: | :---: | :---: |
-| ![Başlangıç Ekranı](assets/interface_initial.png) | ![Dosya Seçildi](assets/interface_ready.png) | ![Rapor Hazırlanıyor](assets/interface_processing.png) |
+<p align="center">
+  <img src="assets/interface_initial.png" width="32%" alt="Başlangıç Ekranı">
+  <img src="assets/interface_ready.png" width="32%" alt="Dosya Seçildi">
+  <img src="assets/interface_processing.png" width="32%" alt="Rapor Hazırlanıyor">
+</p>
 
 ## 📄 Örnek Rapor Çıktısı (Sample Report Output)
 
