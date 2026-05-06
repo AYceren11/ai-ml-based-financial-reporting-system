@@ -3,7 +3,18 @@ A Flask-based financial analysis application that dynamically processes uploaded
 📊 Financial ML Decision Support System (Version 1)
 📌 Overview
 
-This project is the first version of a machine learning–based financial decision support system developed during my software engineering internship.
+This project is the first version of a machine learning–based financial decision support system developed during my software engineering internship at **UCAK YAZILIM**.
+
+## 🖼️ Arayüz Ekran Görüntüleri (Interface Screenshots)
+
+| Başlangıç Ekranı | Dosya Seçildi | Rapor Hazırlanıyor |
+| :---: | :---: | :---: |
+| ![Başlangıç Ekranı](assets/interface_initial.png) | ![Dosya Seçildi](assets/interface_ready.png) | ![Rapor Hazırlanıyor](assets/interface_processing.png) |
+
+## 📄 Örnek Rapor Çıktısı (Sample Report Output)
+
+Sistem tarafından otomatik olarak oluşturulan örnek PDF raporuna buradan ulaşabilirsiniz:
+👉 **[Finansal_Analiz_Raporu.pdf](assets/Finansal_Analiz_Raporu.pdf)**
 
 The system analyzes uploaded financial datasets, performs regression-based profit prediction, calculates deviation metrics, and generates structured PDF reports for managerial decision support.
 
@@ -21,7 +32,9 @@ Version 1 focuses specifically on financial performance analysis using a fixed-s
 
 ⚠ Risk classification using quantile-based segmentation
 
-📄 Automated PDF report generation
+🧠 **AI-Powered Analysis:** Generates Turkish financial commentary using Ollama (Llama 3)
+
+📄 Automated PDF report generation (including AI insights)
 
 🌐 Web interface built with Flask
 
@@ -75,6 +88,8 @@ Scikit-learn
 ReportLab
 
 OpenPyXL
+
+**Ollama (Llama 3)**
 
 HTML / CSS (Frontend interface)
 
@@ -140,7 +155,7 @@ Dynamic column detection
 
 Automatic model selection (Regression / Classification)
 
-AI-assisted report interpretation
+Advanced AI-assisted report interpretation (Multi-model support)
 
 Improved robustness and scalability
 
